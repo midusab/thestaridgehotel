@@ -63,19 +63,23 @@ export default function About() {
            viewport={{ once: true }}
         >
           <motion.span variants={itemVariants} className="text-[10px] uppercase tracking-[0.4em] font-bold text-hotel-primary mb-6 block">
-            Our Heritage
+            Our Foundation
           </motion.span>
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-serif mb-10 leading-tight text-hotel-dark">
-            Elegance Rooted in <br />
-            <span className="serif-italic italic brightness-125">Tradition</span>
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-serif mb-8 leading-tight text-hotel-dark">
+            A Vision for <br />
+            <span className="serif-italic italic brightness-125">World-Class Hospitality</span>
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-500 mb-8 leading-relaxed text-lg font-light">
-            Since its inception, Staridge Hotel has been a beacon of premium hospitality in Western Kenya. Overlooking the majestic Lake Victoria, we offer more than just a stay—we provide an immersive experience that celebrates the beauty of our county.
+          <motion.p variants={itemVariants} className="text-gray-500 mb-8 leading-relaxed text-base font-light">
+            Hotel Staridge Limited was founded on the need to offer world class hotel facilities to the visitors and the people of Homa Bay County. Homa Bay County is a world class tourist attraction region with many tourist sites. 
           </motion.p>
           
+          <motion.p variants={itemVariants} className="text-gray-500 mb-8 leading-relaxed text-base font-light">
+            From the great Ruma National Park—the last remaining home of the Roan antelope—to the historical Rusinga Island, we are perfectly positioned for your exploration of Western Kenya's heritage and wildlife.
+          </motion.p>
+
           <motion.div variants={itemVariants} className="flex gap-12 mb-12 border-l border-hotel-primary/10 pl-8">
             <div className="italic text-gray-400 font-serif text-lg leading-relaxed">
-              "We believe true luxury lies in the details—from the warmth of our welcome to the freshness of our lakeside cuisine."
+              "Experience the soul of Lake Victoria where your dreams come true."
             </div>
           </motion.div>
 
@@ -84,7 +88,7 @@ export default function About() {
               to="/facilities" 
               className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold hover:text-hotel-primary transition-all group"
             >
-              Explore Facilities 
+              Explore Our Offerings 
               <div className="w-12 h-px bg-hotel-primary transition-all duration-300 group-hover:w-20"></div>
             </Link>
           </motion.div>
