@@ -22,6 +22,7 @@ export interface Testimonial {
   role: string;
   content: string;
   avatar?: string;
+  rating: number;
 }
 
 export interface SafariPackage {

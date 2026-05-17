@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Quote } from 'lucide-react';
+import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TESTIMONIALS } from '../constants';
 
 export default function Testimonials() {
@@ -8,10 +8,18 @@ export default function Testimonials() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev === TESTIMONIALS.length - 1 ? 0 : prev + 1));
-    }, 6000);
+      handleNext();
+    }, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentIndex]);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === TESTIMONIALS.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? TESTIMONIALS.length - 1 : prev - 1));
+  };
 
   return (
     <section className="py-32 bg-hotel-dark overflow-hidden relative">
@@ -39,97 +47,125 @@ export default function Testimonials() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-blue-900/10 rounded-full blur-[120px]"
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-blue-500/5 rounded-full blur-[120px]"
         />
       </div>
 
       {/* Background Decorative Element */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none flex items-center justify-center">
-        <motion.span 
-          initial={{ letterSpacing: "0.2em", opacity: 0 }}
-          animate={{ letterSpacing: "0.5em", opacity: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="text-[15rem] md:text-[25rem] font-serif font-bold text-white leading-none overflow-hidden select-none whitespace-nowrap"
-        >
+      <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none flex items-center justify-center">
+        <span className="text-[15rem] md:text-[30rem] font-serif font-bold text-white leading-none overflow-hidden select-none whitespace-nowrap">
           STARIDGE
-        </motion.span>
+        </span>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-        <div className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 text-hotel-primary mb-8 shadow-2xl"
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-[10px] uppercase tracking-[0.5em] font-bold text-hotel-primary mb-4 block"
           >
-            <Quote size={32} strokeWidth={1} />
-          </motion.div>
+            Guest Experiences
+          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="text-4xl md:text-6xl font-serif text-white mb-6"
           >
-            Guest Stories
+            What Our Guests Say
           </motion.h2>
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: 80 }}
-            viewport={{ once: true }}
-            className="h-px bg-hotel-primary mx-auto"
-          ></motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-white/40 max-w-xl mx-auto font-light leading-relaxed text-sm"
+          >
+            Discover the stories of excellence from those who have experienced the unique hospitality of Staridge Hotel in Homa Bay.
+          </motion.p>
         </div>
 
-        <div className="relative min-h-[350px] md:min-h-[300px] flex items-center justify-center">
+        <div className="relative max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              exit={{ opacity: 0, filter: "blur(10px)", y: -20 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full"
+              initial={{ opacity: 0, x: 20, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -20, scale: 0.95 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-10 md:p-16 shadow-2xl relative overflow-hidden"
             >
-              <p className="text-2xl md:text-4xl font-serif text-white/90 leading-tight italic mb-12 max-w-4xl mx-auto px-4 tracking-tight">
-                "{TESTIMONIALS[currentIndex].content}"
-              </p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-col items-center"
-              >
-                <div className="w-12 h-12 rounded-full overflow-hidden mb-4 border-2 border-hotel-primary/30 p-1">
-                   <div className="w-full h-full bg-white/10 rounded-full flex items-center justify-center text-hotel-primary font-bold">
-                      {TESTIMONIALS[currentIndex].name.charAt(0)}
-                   </div>
+              {/* Card Decoration */}
+              <div className="absolute top-0 right-0 p-8 opacity-10">
+                <Quote size={80} strokeWidth={1} className="text-hotel-primary" />
+              </div>
+
+              <div className="flex flex-col md:flex-row gap-12 items-center text-center md:text-left">
+                <div className="relative shrink-0">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl overflow-hidden border-2 border-hotel-primary/20 p-1.5 rotate-3 bg-white/10 shadow-xl">
+                    <img 
+                      src={TESTIMONIALS[currentIndex].avatar} 
+                      alt={TESTIMONIALS[currentIndex].name}
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-hotel-primary rounded-2xl flex items-center justify-center text-white shadow-lg shadow-hotel-primary/30 z-10">
+                    <Star size={20} fill="currentColor" />
+                  </div>
                 </div>
-                <h4 className="text-hotel-primary font-bold tracking-[0.4em] text-[10px] uppercase mb-2">
-                  {TESTIMONIALS[currentIndex].name}
-                </h4>
-                <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-medium">
-                  {TESTIMONIALS[currentIndex].role}
-                </p>
-              </motion.div>
+
+                <div className="flex-grow">
+                  <div className="flex justify-center md:justify-start gap-1 mb-6 text-hotel-primary">
+                    {[...Array(TESTIMONIALS[currentIndex].rating)].map((_, i) => (
+                      <Star key={i} size={16} fill="currentColor" />
+                    ))}
+                  </div>
+                  
+                  <p className="text-xl md:text-2xl font-serif text-white/90 leading-relaxed italic mb-8">
+                    "{TESTIMONIALS[currentIndex].content}"
+                  </p>
+
+                  <div>
+                    <h4 className="text-hotel-primary font-bold tracking-[0.3em] text-[10px] uppercase mb-2">
+                      {TESTIMONIALS[currentIndex].name}
+                    </h4>
+                    <p className="text-white/30 text-[10px] uppercase tracking-[0.2em] font-medium">
+                      {TESTIMONIALS[currentIndex].role}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </AnimatePresence>
-        </div>
 
-        {/* Liquid Progress Dots */}
-        <div className="flex justify-center gap-6 mt-20">
-          {TESTIMONIALS.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className="relative py-4"
+          {/* Navigation Controls */}
+          <div className="flex justify-center md:justify-between items-center mt-12 gap-6">
+            <button 
+              onClick={handlePrev}
+              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-hotel-primary/30 transition-all duration-300 md:absolute md:-left-20 md:top-1/2 md:-translate-y-1/2"
             >
-              <div className={`h-[2px] transition-all duration-1000 ease-[0.22,1,0.36,1] ${
-                i === currentIndex ? 'w-16 bg-hotel-primary' : 'w-6 bg-white/10 hover:bg-white/30'
-              }`}></div>
+              <ChevronLeft size={24} />
             </button>
-          ))}
+            
+            <div className="flex gap-3">
+              {TESTIMONIALS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className="group py-2"
+                >
+                  <div className={`h-1 rounded-full transition-all duration-700 ${
+                    i === currentIndex ? 'w-10 bg-hotel-primary shadow-[0_0_15px_rgba(182,154,101,0.5)]' : 'w-3 bg-white/10 group-hover:bg-white/30'
+                  }`}></div>
+                </button>
+              ))}
+            </div>
+
+            <button 
+              onClick={handleNext}
+              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-hotel-primary/30 transition-all duration-300 md:absolute md:-right-20 md:top-1/2 md:-translate-y-1/2"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

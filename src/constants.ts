@@ -123,22 +123,30 @@ export const MENU_ITEMS: MenuItem[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Sarah Jenkins',
-    role: 'Business Traveler',
+    role: 'CEO, Horizon Ventures',
     content: 'The conference facilities at Staridge are world-class. Combining a productive meeting with the calming views of Lake Victoria made our corporate retreat truly special.',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop',
+    rating: 5,
   },
   {
     name: 'David Ochieng',
-    role: 'Local Resident',
+    role: 'Tech Consultant',
     content: 'The best Nil perch in Homa Bay! The restaurant offers consistent quality and the service is always warm and welcoming. A true gem in our county.',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop',
+    rating: 5,
   },
   {
     name: 'Elena Rodriguez',
-    role: 'International Tourist',
+    role: 'Travel Journalist',
     content: 'Our boat safari was breathtaking. The guides are incredibly knowledgeable about the local ecosystem. Staridge provided the perfect luxury base for exploring Western Kenya.',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop',
+    rating: 5,
   },
   {
     name: 'Michael Chen',
-    role: 'Leisure Guest',
+    role: 'Leisure Enthusiast',
     content: 'The attention to detail in the Executive suites is remarkable. From the marble bathrooms to the personalized morning coffee, everything was perfect.',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop',
+    rating: 5,
   },
 ];
