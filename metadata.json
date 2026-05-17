@@ -1,0 +1,6 @@
+{
+  "name": "Staridge Hotel",
+  "description": "Premium hospitality and safari experiences in Homa Bay County, Kenya. Nestled along the shores of Lake Victoria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
