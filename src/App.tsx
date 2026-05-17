@@ -7,6 +7,7 @@ import SafarisPage from './pages/SafarisPage';
 import MenuPage from './pages/MenuPage';
 import BookingPage from './pages/BookingPage';
 import ContactPage from './pages/ContactPage';
+import GalleryPage from './pages/GalleryPage';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="safaris" element={<SafarisPage />} />
           <Route path="menu" element={<MenuPage />} />
           <Route path="booking" element={<BookingPage />} />
+          <Route path="gallery" element={<GalleryPage />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>

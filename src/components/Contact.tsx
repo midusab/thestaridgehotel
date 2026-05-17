@@ -1,5 +1,7 @@
 import { MapPin, Phone, Mail, Instagram, Facebook, Twitter } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
+import { CONTACT_INFO } from '../constants';
 
 export default function Contact() {
   return (
@@ -31,7 +33,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-serif text-lg text-hotel-dark">Call Us</h4>
-                  <p className="text-sm text-gray-500 font-light">+254 (0) 700 000 000<br />+254 (0) 711 000 000</p>
+                  <p className="text-sm text-gray-500 font-light">{CONTACT_INFO.phone}</p>
                 </div>
               </div>
 
@@ -41,7 +43,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-serif text-lg text-hotel-dark">Email</h4>
-                  <p className="text-sm text-gray-500 font-light">info@staridgehotel.com<br />reservations@staridgehotel.com</p>
+                  <p className="text-sm text-gray-500 font-light">{CONTACT_INFO.email}</p>
                 </div>
               </div>
             </div>
@@ -110,14 +112,15 @@ export function Footer() {
              <div>
                 <h4 className="text-[10px] uppercase tracking-[0.4em] text-hotel-primary font-bold mb-8">Navigation</h4>
                 <ul className="space-y-4 text-sm text-white/50 font-light">
-                   <li><a href="#about" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">The Heritage</a></li>
-                   <li><a href="#facilities" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">Guest Facilities</a></li>
-                   <li><a href="#safaris" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">Explorer Safaris</a></li>
-                   <li><a href="#booking" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">Reservations</a></li>
+                   <li><Link to="/about" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">The Heritage</Link></li>
+                   <li><Link to="/facilities" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">Guest Facilities</Link></li>
+                   <li><Link to="/gallery" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">Gallery</Link></li>
+                   <li><Link to="/safaris" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">Explorer Safaris</Link></li>
+                   <li><Link to="/booking" className="hover:text-hotel-primary transition-colors hover:translate-x-1 inline-block duration-300">Reservations</Link></li>
                    <li>
-                     <a href="#" className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-xl border border-white/10 hover:border-hotel-primary/30 transition-all duration-500 group">
+                     <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-xl border border-white/10 hover:border-hotel-primary/30 transition-all duration-500 group">
                        <Mail size={14} className="text-hotel-primary" /> 
-                       <span className="text-[10px] uppercase tracking-[0.2em] font-bold group-hover:text-white">Staff Webmail</span>
+                       <span className="text-[10px] uppercase tracking-[0.2em] font-bold group-hover:text-white">Connect Now</span>
                      </a>
                    </li>
                 </ul>
@@ -134,7 +137,7 @@ export function Footer() {
           </div>
           
           <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.4em] text-white/20 font-bold">
-             <span>© 2024 Staridge Hotel Homa Bay. Crafted with excellence.</span>
+             <span>© 2026 Staridge Hotel Homa Bay. Crafted with excellence.</span>
              <div className="flex gap-10">
                 <a href="#" className="hover:text-white transition-colors">Privacy</a>
                 <a href="#" className="hover:text-white transition-colors">Terms</a>

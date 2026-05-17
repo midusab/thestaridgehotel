@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, CONTACT_INFO } from '../constants';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,12 +62,12 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           <a 
-            href="#" 
-            title="Staff Email"
+            href={`mailto:${CONTACT_INFO.email}`} 
+            title="General Inquiry"
             className="p-2 hover:text-hotel-primary transition-colors text-white/40 group relative"
           >
             <Mail size={16} />
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-hotel-dark text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-white/10 uppercase tracking-widest">Webmail</span>
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-hotel-dark text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-white/10 uppercase tracking-widest">Connect</span>
           </a>
           <Link 
             to="/booking"
@@ -149,7 +149,7 @@ export default function Navbar() {
 
                 <div className="flex flex-col items-center gap-2 text-white/30 lowercase tracking-[0.2em] font-light">
                    <p className="text-[10px]">Homa Bay, Kenya</p>
-                   <p className="text-[10px]">+254 7XX XXX XXX</p>
+                   <p className="text-[10px]">{CONTACT_INFO.phone}</p>
                 </div>
               </motion.div>
             </motion.div>

@@ -3,6 +3,7 @@ import Gallery from '../components/Gallery';
 import About from '../components/About';
 import Facilities from '../components/Facilities';
 import Testimonials from '../components/Testimonials';
+import Contact from '../components/Contact';
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Facilities />
       <Testimonials />
       <Gallery />
+      <Contact />
     </>
   );
 }

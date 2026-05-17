@@ -5,9 +5,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 export default function Gallery() {
   const images = [
     {
-      url: '/src/assets/images/staridge_hotel_hero_1779019184489.png',
-      title: 'Lakeside View',
+      url: '/src/assets/images/gallery_sunset_terrace_1779034486415.png',
+      title: 'Sunset Terrace',
       desc: 'Breathtaking sunsets over Lake Victoria'
+    },
+    {
+      url: '/src/assets/images/gallery_lobby_view_1779034469855.png',
+      title: 'Luxury Lobby',
+      desc: 'Experience our world-class welcome'
     },
     {
       url: '/src/assets/images/staridge_room_suite_1779019200923.png',
@@ -15,25 +20,10 @@ export default function Gallery() {
       desc: 'Uncompromising luxury and comfort'
     },
     {
-      url: '/src/assets/images/staridge_conference_room_1779032098064.png',
-      title: 'Conference Center',
-      desc: 'Modern facilities for professional excellence'
+      url: '/src/assets/images/staridge_infinity_pool_1779033032109.png',
+      title: 'Infinity Pool',
+      desc: 'Serenity meets the horizon'
     },
-    {
-      url: '/src/assets/images/staridge_bar_lounge_1779032114547.png',
-      title: 'Bar & Lounge',
-      desc: 'Vibrant atmosphere and premium drinks'
-    },
-    {
-      url: '/src/assets/images/lake_simbi_boat_ride_1779032145529.png',
-      title: 'Lake Simbi',
-      desc: 'Discover authentic boat ride experiences'
-    },
-    {
-      url: '/src/assets/images/ruma_safari_view_1779019218201.png',
-      title: 'Wild Wonders',
-      desc: 'Safaris at Ruma National Park'
-    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

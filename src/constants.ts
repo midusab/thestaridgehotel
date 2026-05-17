@@ -4,10 +4,21 @@ export const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Facilities', href: '/facilities' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Safaris', href: '/safaris' },
   { label: 'Menu', href: '/menu' },
   { label: 'Contact', href: '/contact' },
 ];
+
+export const CONTACT_INFO = {
+  phone: '+254 742871112',
+  email: 'hotelstaridge@gmail.com',
+  address: 'Homa Bay, Kenya',
+  location: {
+    lat: -0.5273,
+    lng: 34.4567
+  }
+};
 
 export const FACILITIES: Facility[] = [
   {

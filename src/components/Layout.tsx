@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Navbar from './Navbar';
 import { Footer } from './Contact';
+import BackToTop from './BackToTop';
 
 export default function Layout() {
   const location = useLocation();
@@ -32,6 +33,7 @@ export default function Layout() {
         </AnimatePresence>
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
