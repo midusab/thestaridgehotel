@@ -3,92 +3,119 @@ import { Calendar, Users, Home } from 'lucide-react';
 
 export default function Booking() {
   return (
-    <section id="booking" className="py-24 relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-hotel-primary/5 -z-10 skew-x-12 translate-x-32"></div>
-      
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-white shadow-2xl flex flex-col lg:flex-row">
+    <section id="booking" className="py-12 md:py-24 relative overflow-hidden bg-hotel-cream/20">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-white/40">
           
-          {/* Reservation Info */}
-          <div className="lg:w-1/3 bg-hotel-dark text-white p-12 flex flex-col justify-between">
-            <div>
-              <span className="text-xs uppercase tracking-[0.3em] text-hotel-primary font-bold mb-4 block">Reservation</span>
-              <h2 className="text-4xl font-serif mb-6 leading-tight">Secure Your <br /><span className="serif-italic italic">Lakeside Retreat</span></h2>
-              <p className="text-white/60 text-sm leading-relaxed font-light">
-                Plan your perfect stay in Homa Bay. Our team is ready to ensure your experience starts perfectly the moment you book.
+          {/* Reservation Info - Dark Side */}
+          <div className="lg:w-2/5 bg-hotel-dark text-white p-10 md:p-20 flex flex-col justify-between relative overflow-hidden">
+            {/* Ambient Blobs */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-hotel-primary/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-hotel-primary/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
+
+            <div className="relative z-10">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-hotel-primary font-bold mb-6 block">Personal Concierge</span>
+              <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">Secure Your <br /><span className="text-hotel-primary italic">Paradise</span></h2>
+              <p className="text-white/40 text-sm md:text-base leading-relaxed font-light mb-12">
+                Allow us to curate your perfect escape. From boat expeditions to sunset dinners, your journey begins with this simple reservation.
               </p>
+
+              <div className="space-y-6">
+                {[
+                  'Bespoke Guest Services',
+                  'Best Rate Guaranteed Direct',
+                  'Flexible Cancellation Policy'
+                ].map((item, i) => (
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + i * 0.1 }}
+                    key={i} 
+                    className="flex items-center gap-5 text-[10px] uppercase tracking-[0.3em] text-white/60 font-bold"
+                  >
+                    <div className="w-8 h-[1px] bg-hotel-primary"></div>
+                    {item}
+                  </motion.div>
+                ))}
+              </div>
             </div>
             
-            <div className="mt-12 space-y-4">
-              <div className="flex items-center gap-4 text-sm text-white/80">
-                <div className="w-8 h-px bg-hotel-primary"></div>
-                Best Rate Guaranteed
-              </div>
-              <div className="flex items-center gap-4 text-sm text-white/80">
-                <div className="w-8 h-px bg-hotel-primary"></div>
-                Free Cancellation (48hrs)
+            <div className="mt-20 pt-10 border-t border-white/5 relative z-10">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-medium mb-4">Direct Assistance</p>
+              <div className="text-xl md:text-2xl font-serif text-hotel-primary">
+                +254 7XX XXX XXX
               </div>
             </div>
-          </div>
-
-          {/* Form */}
-          <div className="lg:w-2/3 p-12">
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => e.preventDefault()}>
+          </div> 
+ 
+          {/* Form Side */}
+          <div className="lg:w-3/5 p-10 md:p-20 bg-gradient-to-br from-white to-hotel-cream/30">
+            <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
               
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 flex items-center gap-2">
-                  <Calendar size={12} className="text-hotel-primary" /> Check-In Arrival
-                </label>
-                <input 
-                  type="date" 
-                  className="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-hotel-primary transition-colors text-hotel-dark font-medium"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                <div className="space-y-4 group">
+                  <label className="text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400 group-focus-within:text-hotel-primary transition-colors flex items-center gap-3">
+                    <Calendar size={14} /> Arrival
+                  </label>
+                  <div className="relative">
+                    <input 
+                      type="date" 
+                      className="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-hotel-primary transition-all text-hotel-dark font-medium bg-transparent"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-4 group">
+                  <label className="text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400 group-focus-within:text-hotel-primary transition-colors flex items-center gap-3">
+                    <Calendar size={14} /> Departure
+                  </label>
+                  <div className="relative">
+                    <input 
+                      type="date" 
+                      className="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-hotel-primary transition-all text-hotel-dark font-medium bg-transparent"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-4 group">
+                  <label className="text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400 group-focus-within:text-hotel-primary transition-colors flex items-center gap-3">
+                    <Users size={14} /> Guests
+                  </label>
+                  <select className="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-hotel-primary transition-all text-hotel-dark appearance-none bg-transparent font-medium cursor-pointer">
+                    <option>Single Occupancy</option>
+                    <option>Double (2 Persons)</option>
+                    <option>Triple (3 Persons)</option>
+                    <option>Family / Large Group</option>
+                  </select>
+                </div>
+
+                <div className="space-y-4 group">
+                  <label className="text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400 group-focus-within:text-hotel-primary transition-colors flex items-center gap-3">
+                    <Home size={14} /> Residence Type
+                  </label>
+                  <select className="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-hotel-primary transition-all text-hotel-dark appearance-none bg-transparent font-medium cursor-pointer">
+                    <option>Deluxe Lakeside Room</option>
+                    <option>Executive Ocean View</option>
+                    <option>The Presidential Suite</option>
+                    <option>Bohemian Guesthouse</option>
+                  </select>
+                </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 flex items-center gap-2">
-                  <Calendar size={12} className="text-hotel-primary" /> Check-Out Departure
-                </label>
-                <input 
-                  type="date" 
-                  className="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-hotel-primary transition-colors text-hotel-dark font-medium"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 flex items-center gap-2">
-                  <Users size={12} className="text-hotel-primary" /> Persons / Guests
-                </label>
-                <select className="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-hotel-primary transition-colors text-hotel-dark appearance-none bg-transparent font-medium">
-                  <option>1 Person</option>
-                  <option>2 Persons</option>
-                  <option>3 Persons</option>
-                  <option>4+ Persons</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 flex items-center gap-2">
-                  <Home size={12} className="text-hotel-primary" /> Rooms Required
-                </label>
-                <select className="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-hotel-primary transition-colors text-hotel-dark appearance-none bg-transparent font-medium">
-                  <option>1 Room</option>
-                  <option>2 Rooms</option>
-                  <option>3 Rooms</option>
-                  <option>Family Suite</option>
-                </select>
-              </div>
-
-              <div className="md:col-span-2 mt-4">
+              <div className="pt-8">
                 <motion.button 
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-hotel-primary text-white py-5 uppercase tracking-[0.3em] font-bold text-sm shadow-xl hover:bg-hotel-dark transition-all duration-300"
+                  whileHover={{ scale: 1.01, backgroundColor: 'var(--hotel-dark)' }}
+                  whileTap={{ scale: 0.99 }}
+                  className="w-full bg-hotel-primary text-white py-6 rounded-2xl uppercase tracking-[0.4em] font-bold text-xs shadow-2xl shadow-hotel-primary/30 transition-all duration-500 overflow-hidden relative group"
                 >
-                  Check Availability
+                  <span className="relative z-10 transition-transform duration-500 group-hover:tracking-[0.6em] block">Request Availability</span>
+                  <div className="absolute inset-0 bg-hotel-dark transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
                 </motion.button>
               </div>
+
+              <p className="text-center text-[10px] uppercase tracking-[0.2em] text-gray-400 font-light">
+                Secure 256-bit encrypted booking platform.
+              </p>
             </form>
           </div>
 

@@ -4,10 +4,19 @@ export interface NavItem {
 }
 
 export interface Facility {
+  id: string;
   title: string;
   description: string;
   iconName: string;
   image?: string;
+  reviews?: FacilityReview[];
+}
+
+export interface FacilityReview {
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
 }
 
 export interface MenuItem {

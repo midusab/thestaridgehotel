@@ -11,40 +11,65 @@ export const NAV_LINKS: NavItem[] = [
 
 export const FACILITIES: Facility[] = [
   {
+    id: 'dining',
     title: 'Lakeside Dining',
     description: 'Experience gourmet meals with a breathtaking view of Lake Victoria.',
     iconName: 'Utensils',
-    image: '/src/assets/images/lake_victoria_fish_dish_1779019237096.png'
+    image: '/src/assets/images/lake_victoria_fish_dish_1779019237096.png',
+    reviews: [
+      { userName: 'Alice J.', rating: 5, comment: 'The Tilapia was perfectly cooked! Amazing views.', date: 'Dec 2023' },
+      { userName: 'Mark S.', rating: 4, comment: 'Great food, service was a bit slow but the atmosphere made up for it.', date: 'Jan 2024' }
+    ]
   },
   {
+    id: 'suites',
     title: 'Luxury Suites',
     description: 'Elegantly furnished rooms with premium amenities and lake views.',
     iconName: 'Bed',
-    image: '/src/assets/images/staridge_room_suite_1779019200923.png'
+    image: '/src/assets/images/staridge_room_suite_1779019200923.png',
+    reviews: [
+      { userName: 'Robert K.', rating: 5, comment: 'Waking up to the lake view is therapeutic. Highly recommended.', date: 'Nov 2023' }
+    ]
   },
   {
+    id: 'conference',
     title: 'Conference Center',
     description: 'State-of-the-art facilities for corporate meetings and events.',
     iconName: 'Users',
-    image: '/src/assets/images/staridge_conference_room_1779032098064.png'
+    image: '/src/assets/images/staridge_conference_room_1779032098064.png',
+    reviews: [
+      { userName: 'Sarah L.', rating: 4, comment: 'Very professional space. WiFi was reliable.', date: 'Feb 2024' }
+    ]
   },
   {
+    id: 'pool',
     title: 'Infinity Pool',
     description: 'A serene infinity pool to relax and enjoy the tropical sun.',
     iconName: 'Waves',
-    image: '/src/assets/images/staridge_infinity_pool_1779033032109.png'
+    image: '/src/assets/images/staridge_infinity_pool_1779033032109.png',
+    reviews: [
+      { userName: 'John D.', rating: 5, comment: 'Best sunset view from the pool!', date: 'Jan 2024' }
+    ]
   },
   {
+    id: 'lounge',
     title: 'Signature Lounge',
     description: 'Experience the vibrant atmosphere with artisan cocktails.',
     iconName: 'Wine',
-    image: '/src/assets/images/starney_cocktail_1779032730867.png'
+    image: '/src/assets/images/starney_cocktail_1779032730867.png',
+    reviews: [
+      { userName: 'Chris M.', rating: 5, comment: 'The cocktails are literally art. Love the live band!', date: 'Mar 2024' }
+    ]
   },
   {
+    id: 'tours',
     title: 'Local Expeditions',
     description: 'Discover the hidden gems of Homa Bay with our expert guides.',
     iconName: 'Compass',
-    image: '/src/assets/images/lake_simbi_boat_ride_1779032145529.png'
+    image: '/src/assets/images/lake_simbi_boat_ride_1779032145529.png',
+    reviews: [
+      { userName: 'Emily W.', rating: 4, comment: 'The boat safari was the highlight of our trip. Saw so many birds!', date: 'Dec 2023' }
+    ]
   },
 ];
 

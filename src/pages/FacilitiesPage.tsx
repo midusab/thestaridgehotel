@@ -1,7 +1,43 @@
 import Facilities from '../components/Facilities';
 import { motion } from 'motion/react';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, Star, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { FACILITIES } from '../constants';
+import { FacilityReview } from '../types';
+
+function ReviewDisplay({ reviews }: { reviews: FacilityReview[] | undefined }) {
+  if (!reviews || reviews.length === 0) return null;
+
+  return (
+    <div className="mt-12 bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-hotel-primary/10">
+      <div className="flex items-center gap-2 mb-4">
+        <MessageCircle size={14} className="text-hotel-primary" />
+        <span className="text-[10px] uppercase tracking-widest font-bold text-hotel-dark">Guest Opinions</span>
+      </div>
+      <div className="space-y-4">
+        {reviews.map((review, i) => (
+          <div key={i} className="border-b border-gray-100 last:border-0 pb-4 last:pb-0">
+            <div className="flex justify-between items-center mb-1">
+              <span className="text-xs font-bold text-hotel-dark">{review.userName}</span>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, starI) => (
+                  <Star 
+                    key={starI} 
+                    size={10} 
+                    fill={starI < review.rating ? "#B69A65" : "none"} 
+                    className={starI < review.rating ? "text-hotel-primary" : "text-gray-200"} 
+                  />
+                ))}
+              </div>
+            </div>
+            <p className="text-[11px] text-gray-500 italic leading-relaxed">"{review.comment}"</p>
+            <span className="text-[9px] text-gray-400 mt-1 block">{review.date}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function FacilitiesPage() {
   const roomFeatures = [
@@ -9,6 +45,8 @@ export default function FacilitiesPage() {
     "Work desk", "Safety box", "240v socket", "Ironing facility", 
     "Satellite cable", "Complementary bottled water", "Daily house keeping services"
   ];
+
+  const getReviews = (id: string) => FACILITIES.find(f => f.id === id)?.reviews;
 
   return (
     <div className="pt-24 min-h-screen bg-hotel-cream/30">
@@ -39,7 +77,7 @@ export default function FacilitiesPage() {
             <p className="text-gray-500 mb-8 leading-relaxed font-light italic border-l-2 border-hotel-primary pl-6">
               Your tastefully appointed room is outfitted with a 30" LCD TV and your Marble bathroom offers you a shower and double vanity.
             </p>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-10">
               {roomFeatures.map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-hotel-primary/10 flex items-center justify-center text-hotel-primary">
@@ -49,6 +87,7 @@ export default function FacilitiesPage() {
                 </div>
               ))}
             </div>
+            <ReviewDisplay reviews={getReviews('suites')} />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -83,7 +122,7 @@ export default function FacilitiesPage() {
             <p className="text-gray-500 mb-8 leading-relaxed font-light">
               The room has a 30" LCD TV with thoughtfully curated amenities to ensure your stay is as comfortable as possible.
             </p>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-10">
               {roomFeatures.slice(0, 8).map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-hotel-primary/10 flex items-center justify-center text-hotel-primary">
@@ -93,6 +132,7 @@ export default function FacilitiesPage() {
                 </div>
               ))}
             </div>
+            <ReviewDisplay reviews={getReviews('suites')?.slice(1)} />
           </motion.div>
         </section>
 
@@ -112,12 +152,15 @@ export default function FacilitiesPage() {
             <p className="text-gray-500 mb-8 leading-relaxed font-light">
               Whether you are meeting with customers, giving a presentation or catching up with colleagues, we have the best place that suits you.
             </p>
-            <Link 
-              to="/contact" 
-              className="inline-flex items-center gap-4 bg-hotel-primary text-white px-8 py-4 text-[10px] uppercase tracking-widest font-bold rounded-full hover:bg-hotel-dark transition-all duration-500"
-            >
-              Book Your Meeting <ArrowRight size={14} />
-            </Link>
+            <div className="mb-10">
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center gap-4 bg-hotel-primary text-white px-8 py-4 text-[10px] uppercase tracking-widest font-bold rounded-full hover:bg-hotel-dark transition-all duration-500"
+              >
+                Book Your Meeting <ArrowRight size={14} />
+              </Link>
+            </div>
+            <ReviewDisplay reviews={getReviews('conference')} />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -152,6 +195,7 @@ export default function FacilitiesPage() {
             <p className="text-gray-500 mb-8 leading-relaxed font-light">
               Staridge welcomes you to experience the vibrant atmosphere of watching sports while enjoying a selection of beers, cocktails, and fine wines. It is also the place to enjoy a variety of local music and a traditional live band.
             </p>
+            <ReviewDisplay reviews={getReviews('lounge')} />
           </motion.div>
         </section>
 
@@ -174,6 +218,7 @@ export default function FacilitiesPage() {
             <p className="text-xs text-gray-400 italic mb-8 border-l border-hotel-primary/30 pl-4">
               We always serve dinner in formal style with occasional theme nights on special occasions.
             </p>
+            <ReviewDisplay reviews={getReviews('dining')} />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -208,13 +253,16 @@ export default function FacilitiesPage() {
             <p className="text-gray-500 mb-8 leading-relaxed font-light">
               We organize boat rides and off-road fleets to all tourist destinations like Ruma National Park, Rusinga Island, Lake Simbi and many more. Our guides are waiting. Let's go.
             </p>
-            <Link 
-              to="/safaris" 
-              className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold hover:text-hotel-primary transition-all group"
-            >
-              Explore Safari Packages
-              <div className="w-12 h-px bg-hotel-primary transition-all duration-300 group-hover:w-20"></div>
-            </Link>
+            <div className="mb-10">
+              <Link 
+                to="/safaris" 
+                className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold hover:text-hotel-primary transition-all group"
+              >
+                Explore Safari Packages
+                <div className="w-12 h-px bg-hotel-primary transition-all duration-300 group-hover:w-20"></div>
+              </Link>
+            </div>
+            <ReviewDisplay reviews={getReviews('tours')} />
           </motion.div>
         </section>
       </div>

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import * as LucideIcons from 'lucide-react';
+import { Star } from 'lucide-react';
 import { FACILITIES } from '../constants';
 
 export default function Facilities() {
@@ -60,6 +61,10 @@ export default function Facilities() {
           {FACILITIES.map((facility) => {
             // @ts-ignore
             const Icon = LucideIcons[facility.iconName];
+            const averageRating = facility.reviews 
+              ? (facility.reviews.reduce((acc, rev) => acc + rev.rating, 0) / facility.reviews.length).toFixed(1)
+              : null;
+
             return (
               <motion.div
                 key={facility.title}
@@ -76,6 +81,14 @@ export default function Facilities() {
                 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-hotel-dark via-hotel-dark/20 to-transparent"></div>
+
+                {/* Rating Badge */}
+                {averageRating && (
+                  <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Star size={12} fill="#B69A65" className="text-hotel-primary" />
+                    <span className="text-[10px] text-white font-bold">{averageRating}</span>
+                  </div>
+                )}
 
                 {/* Content */}
                 <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
