@@ -10,7 +10,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           
           <div>
-            <span className="text-sm uppercase tracking-[0.3em] font-semibold text-whatsapp mb-4 block">Connect</span>
+            <span className="text-sm uppercase tracking-[0.3em] font-semibold text-hotel-primary mb-4 block">Connect</span>
             <h2 className="text-4xl md:text-5xl font-serif text-hotel-dark mb-10">Get in Touch</h2>
             <p className="text-gray-500 mb-12 leading-relaxed max-w-md">
               Whether you're planning a wedding, a corporate retreat, or a simple weekend getaway, our team is here to assist you.
@@ -50,31 +50,31 @@ export default function Contact() {
           </div>
 
           <div className="bg-white p-10 md:p-12 shadow-2xl relative rounded-3xl overflow-hidden border border-gray-100">
-             <div className="absolute top-0 left-0 w-1.5 h-full bg-whatsapp"></div>
+             <div className="absolute top-0 left-0 w-1.5 h-full bg-hotel-primary"></div>
              <h3 className="text-2xl font-serif mb-8 text-hotel-dark">Send a Message</h3>
              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                    <div className="space-y-2">
                      <label className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Full Name</label>
-                      <input className="w-full border-b border-gray-100 py-2 focus:outline-none focus:border-whatsapp bg-transparent" type="text" placeholder="John Doe" />
+                      <input className="w-full border-b border-gray-100 py-2 focus:outline-none focus:border-hotel-primary bg-transparent" type="text" placeholder="John Doe" />
                    </div>
                    <div className="space-y-2">
                      <label className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Email Address</label>
-                      <input className="w-full border-b border-gray-100 py-2 focus:outline-none focus:border-whatsapp bg-transparent" type="email" placeholder="john@example.com" />
+                      <input className="w-full border-b border-gray-100 py-2 focus:outline-none focus:border-hotel-primary bg-transparent" type="email" placeholder="john@example.com" />
                    </div>
                 </div>
                 <div className="space-y-2">
                    <label className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Subject</label>
-                   <input className="w-full border-b border-gray-100 py-2 focus:outline-none focus:border-whatsapp bg-transparent" type="text" placeholder="Reservation Inquiry" />
+                   <input className="w-full border-b border-gray-100 py-2 focus:outline-none focus:border-hotel-primary bg-transparent" type="text" placeholder="Reservation Inquiry" />
                 </div>
                 <div className="space-y-2">
                    <label className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Message</label>
-                   <textarea rows={4} className="w-full border-b border-gray-100 py-4 focus:outline-none focus:border-whatsapp resize-none bg-transparent" placeholder="Tell us more..."></textarea>
+                   <textarea rows={4} className="w-full border-b border-gray-100 py-4 focus:outline-none focus:border-hotel-primary resize-none bg-transparent" placeholder="Tell us more..."></textarea>
                 </div>
                 <motion.button 
                    whileHover={{ scale: 1.01 }}
                    whileTap={{ scale: 0.99 }}
-                   className="w-full bg-hotel-dark text-white py-5 rounded-2xl uppercase tracking-[0.4em] font-bold text-[10px] hover:bg-whatsapp transition-all duration-500 shadow-xl shadow-hotel-dark/10 group flex items-center justify-center gap-4"
+                   className="w-full bg-hotel-dark text-white py-5 rounded-2xl uppercase tracking-[0.4em] font-bold text-[10px] hover:bg-hotel-primary transition-all duration-500 shadow-xl shadow-hotel-dark/10 group flex items-center justify-center gap-4"
                 >
                    Send Message
                    <div className="w-8 h-[1px] bg-white group-hover:w-12 transition-all duration-500"></div>
@@ -96,7 +96,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
              <div className="md:col-span-2">
                 <h2 className="text-4xl font-serif mb-8 tracking-[0.2em] font-bold">
-                  STARIDGE <span className="text-whatsapp brightness-110">HOTEL</span>
+                  STARIDGE <span className="text-hotel-primary brightness-150">HOTEL</span>
                 </h2>
                 <p className="text-white/40 text-lg leading-relaxed max-w-sm mb-10 font-light italic">
                   "Experience the soul of Lake Victoria in unparalleled luxury and comfort."

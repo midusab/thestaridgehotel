@@ -66,7 +66,7 @@ export default function Hero() {
            initial="hidden"
            animate="visible"
         >
-          <motion.span variants={itemVariants} className="text-[10px] uppercase tracking-[0.6em] font-bold mb-6 block text-whatsapp">
+          <motion.span variants={itemVariants} className="text-[10px] uppercase tracking-[0.6em] font-bold mb-6 block text-hotel-primary brightness-150">
             Welcome to Homa Bay's Pride
           </motion.span>
           <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl font-serif mb-8 leading-tight">
@@ -98,7 +98,7 @@ export default function Hero() {
         {HERO_IMAGES.map((_, i) => (
           <div 
             key={i} 
-            className={`h-1 transition-all duration-500 rounded-full ${i === currentImage ? 'w-8 bg-whatsapp' : 'w-2 bg-white/20'}`}
+            className={`h-1 transition-all duration-500 rounded-full ${i === currentImage ? 'w-8 bg-hotel-primary' : 'w-2 bg-white/20'}`}
           />
         ))}
       </div>
@@ -111,8 +111,8 @@ export default function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white flex flex-col items-center gap-4"
       >
         <span className="text-[10px] uppercase tracking-[0.4em] font-bold">Discover More</span>
-        <div className="w-[1px] h-10 bg-gradient-to-b from-whatsapp to-transparent"></div>
-        <ArrowDown size={14} className="text-whatsapp" />
+        <div className="w-[1px] h-10 bg-gradient-to-b from-hotel-primary to-transparent"></div>
+        <ArrowDown size={14} className="text-hotel-primary" />
       </motion.div>
     </section>
   );

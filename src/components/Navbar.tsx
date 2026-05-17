@@ -10,6 +10,19 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -21,21 +34,37 @@ export default function Navbar() {
   const isTransparent = location.pathname === '/' && !scrolled;
 
   return (
-    <nav 
-      className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[60] transition-all duration-700 w-[92%] md:w-[95%] max-w-7xl ${
-        scrolled || location.pathname !== '/' || isOpen
-          ? 'bg-hotel-dark/40 backdrop-blur-2xl py-3 px-6 md:px-8 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] border border-white/10' 
-          : 'bg-transparent py-4 md:py-6 px-4 md:px-6'
-      }`}
+    <motion.nav 
+      initial={false}
+      animate={{
+        width: scrolled ? "95%" : "92%",
+        top: scrolled ? "12px" : "24px",
+        height: scrolled ? "72px" : "88px",
+        paddingLeft: scrolled ? "32px" : "24px",
+        paddingRight: scrolled ? "32px" : "24px",
+        borderRadius: scrolled ? "20px" : "64px",
+        backgroundColor: scrolled || isOpen ? "rgba(10, 15, 24, 0.85)" : "rgba(255, 255, 255, 0.03)",
+        backdropFilter: scrolled || isOpen ? "blur(32px)" : "blur(4px)",
+        borderColor: scrolled || isOpen ? "rgba(255, 255, 255, 0.08)" : "rgba(255, 255, 255, 0.05)",
+        boxShadow: scrolled ? "0 20px 40px rgba(0,0,0,0.4)" : "none"
+      }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed left-1/2 -translate-x-1/2 z-[60] flex items-center border"
     >
-      <div className="flex justify-between items-center text-white">
+      <div className="flex justify-between items-center text-white w-full">
         <Link to="/" className="group flex items-center gap-2 md:gap-3">
-          <div className="w-8 h-8 md:w-10 md:h-10 bg-whatsapp rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-whatsapp/30 group-hover:rotate-12 transition-transform duration-500">
+          <motion.div 
+            animate={{ scale: scrolled ? 0.9 : 1 }}
+            className="w-8 h-8 md:w-10 md:h-10 bg-hotel-primary rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-hotel-primary/30 group-hover:rotate-12 transition-transform duration-500"
+          >
             <span className="text-lg md:text-xl font-serif font-bold">S</span>
-          </div>
-          <span className="text-lg md:text-xl font-serif tracking-[0.1em] font-bold">
-            <span className="hidden sm:inline">STARIDGE </span><span className="text-whatsapp brightness-110">HOTEL</span>
-          </span>
+          </motion.div>
+          <motion.span 
+            animate={{ opacity: scrolled ? 1 : 1, x: scrolled ? 0 : 0 }}
+            className="text-lg md:text-xl font-serif tracking-[0.1em] font-bold"
+          >
+            <span className="hidden sm:inline">STARIDGE </span><span className="text-hotel-primary brightness-150">HOTEL</span>
+          </motion.span>
         </Link>
 
         {/* Desktop Links */}
@@ -71,7 +100,7 @@ export default function Navbar() {
           </a>
           <Link 
             to="/booking"
-            className="bg-whatsapp text-white px-6 xl:px-8 py-2.5 xl:py-3 rounded-2xl text-[9px] xl:text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-hotel-dark transition-all duration-500 shadow-xl shadow-whatsapp/40 active:scale-95"
+            className="bg-hotel-primary text-white px-6 xl:px-8 py-2.5 xl:py-3 rounded-2xl text-[9px] xl:text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-hotel-dark transition-all duration-500 shadow-xl shadow-hotel-primary/40 active:scale-95"
           >
             Book Now
           </Link>
@@ -79,7 +108,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden text-white w-10 h-10 flex items-center justify-center rounded-full bg-white/5 backdrop-blur-md border border-white/10 active:scale-90 transition-transform"
+          className="lg:hidden text-white w-10 h-10 flex items-center justify-center rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 active:scale-90 transition-transform"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -108,7 +137,7 @@ export default function Navbar() {
               transition={{ delay: 0.2 }}
               className="relative z-10 flex flex-col items-center w-full gap-8"
             >
-              <div className="text-[10px] uppercase tracking-[0.5em] text-whatsapp font-bold mb-4">Discovery</div>
+              <div className="text-[10px] uppercase tracking-[0.5em] text-hotel-primary font-bold mb-4">Discovery</div>
               <div className="flex flex-col items-center gap-6 w-full">
                 {NAV_LINKS.map((link, i) => (
                   <motion.div
@@ -121,8 +150,8 @@ export default function Navbar() {
                     <Link 
                       to={link.href}
                       onClick={() => setIsOpen(false)}
-                      className={`text-3xl md:text-5xl font-serif text-white hover:text-whatsapp transition-all duration-300 block ${
-                        location.pathname === link.href ? 'text-whatsapp scale-110' : ''
+                      className={`text-3xl md:text-5xl font-serif text-white hover:text-hotel-primary transition-all duration-300 block ${
+                        location.pathname === link.href ? 'text-hotel-primary scale-110' : ''
                       }`}
                     >
                       {link.label}
@@ -142,7 +171,7 @@ export default function Navbar() {
                 <Link 
                   to="/booking"
                   onClick={() => setIsOpen(false)}
-                  className="bg-whatsapp text-white w-full max-w-xs py-5 rounded-2xl text-xl uppercase tracking-widest font-bold shadow-2xl shadow-whatsapp/40 text-center active:scale-95 transition-transform"
+                  className="bg-hotel-primary text-white w-full max-w-xs py-5 rounded-2xl text-xl uppercase tracking-widest font-bold shadow-2xl shadow-hotel-primary/40 text-center active:scale-95 transition-transform"
                 >
                   Book Your Stay
                 </Link>
@@ -156,6 +185,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }
