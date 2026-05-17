@@ -32,7 +32,7 @@ export default function About() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="aspect-[4/5] bg-hotel-dark overflow-hidden rounded-2xl shadow-[0_32px_64px_rgba(0,0,0,0.1)] relative z-10">
+          <div className="aspect-[4/5] bg-hotel-dark overflow-hidden rounded-3xl shadow-[0_32px_64px_rgba(0,0,0,0.1)] relative z-10">
             <img 
               src="/src/assets/images/staridge_room_suite_1779019200923.png" 
               alt="Luxury at Staridge" 
@@ -49,7 +49,7 @@ export default function About() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="absolute -bottom-6 -left-6 bg-white p-8 shadow-2xl rounded-2xl z-20 hidden md:block"
+            className="absolute -bottom-6 -left-6 bg-white p-8 shadow-2xl rounded-3xl z-20 hidden md:block"
           >
             <h4 className="text-4xl font-serif text-hotel-primary mb-1">150+</h4>
             <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Luxury Guest Rooms</p>
@@ -86,10 +86,10 @@ export default function About() {
           <motion.div variants={itemVariants}>
             <Link 
               to="/facilities" 
-              className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold hover:text-hotel-primary transition-all group"
+              className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] font-bold hover:text-hotel-primary transition-all group"
             >
               Explore Our Offerings 
-              <div className="w-12 h-px bg-hotel-primary transition-all duration-300 group-hover:w-20"></div>
+              <div className="w-12 h-[2px] bg-hotel-primary transition-all duration-300 group-hover:w-20"></div>
             </Link>
           </motion.div>
         </motion.div>

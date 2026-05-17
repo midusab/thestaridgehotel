@@ -24,27 +24,27 @@ export default function Navbar() {
     <nav 
       className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[60] transition-all duration-700 w-[92%] md:w-[95%] max-w-7xl ${
         scrolled || location.pathname !== '/' || isOpen
-          ? 'bg-hotel-dark/40 backdrop-blur-2xl py-3 px-6 md:px-8 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] border border-white/10' 
+          ? 'bg-hotel-dark/40 backdrop-blur-2xl py-3 px-6 md:px-8 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] border border-white/10' 
           : 'bg-transparent py-4 md:py-6 px-4 md:px-6'
       }`}
     >
       <div className="flex justify-between items-center text-white">
         <Link to="/" className="group flex items-center gap-2 md:gap-3">
-          <div className="w-8 h-8 md:w-10 md:h-10 bg-hotel-primary rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-hotel-primary/30 group-hover:rotate-12 transition-transform duration-500">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-whatsapp rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-whatsapp/30 group-hover:rotate-12 transition-transform duration-500">
             <span className="text-lg md:text-xl font-serif font-bold">S</span>
           </div>
           <span className="text-lg md:text-xl font-serif tracking-[0.1em] font-bold">
-            <span className="hidden sm:inline">STARIDGE </span><span className="text-hotel-primary brightness-150">HOTEL</span>
+            <span className="hidden sm:inline">STARIDGE </span><span className="text-whatsapp brightness-110">HOTEL</span>
           </span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex gap-1 items-center bg-white/5 backdrop-blur-md rounded-full p-1 border border-white/5">
+        <div className="hidden lg:flex gap-1 items-center bg-white/5 backdrop-blur-md rounded-2xl p-1 border border-white/5">
           {NAV_LINKS.map((link) => (
             <Link 
               key={link.label}
               to={link.href} 
-              className={`text-[9px] xl:text-[10px] uppercase tracking-[0.2em] px-4 xl:px-6 py-2.5 rounded-full transition-all duration-500 font-bold relative group ${
+              className={`text-[9px] xl:text-[10px] uppercase tracking-[0.2em] px-4 xl:px-6 py-2.5 rounded-xl transition-all duration-500 font-bold relative group ${
                 location.pathname === link.href ? 'text-white' : 'text-white/50 hover:text-white'
               }`}
             >
@@ -52,7 +52,7 @@ export default function Navbar() {
               {location.pathname === link.href && (
                 <motion.div 
                   layoutId="nav-pill"
-                  className="absolute inset-0 bg-hotel-primary rounded-full -z-10 shadow-lg shadow-hotel-primary/20"
+                  className="absolute inset-0 bg-hotel-primary rounded-xl -z-10 shadow-lg shadow-hotel-primary/20"
                   transition={{ type: 'spring', bounce: 0.3, duration: 0.6 }}
                 />
               )}
@@ -71,7 +71,7 @@ export default function Navbar() {
           </a>
           <Link 
             to="/booking"
-            className="bg-hotel-primary text-white px-6 xl:px-8 py-2.5 xl:py-3 rounded-full text-[9px] xl:text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-hotel-dark transition-all duration-500 shadow-xl shadow-hotel-primary/40 active:scale-95"
+            className="bg-whatsapp text-white px-6 xl:px-8 py-2.5 xl:py-3 rounded-2xl text-[9px] xl:text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-hotel-dark transition-all duration-500 shadow-xl shadow-whatsapp/40 active:scale-95"
           >
             Book Now
           </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
               transition={{ delay: 0.2 }}
               className="relative z-10 flex flex-col items-center w-full gap-8"
             >
-              <div className="text-[10px] uppercase tracking-[0.5em] text-hotel-primary font-bold mb-4">Discovery</div>
+              <div className="text-[10px] uppercase tracking-[0.5em] text-whatsapp font-bold mb-4">Discovery</div>
               <div className="flex flex-col items-center gap-6 w-full">
                 {NAV_LINKS.map((link, i) => (
                   <motion.div
@@ -121,8 +121,8 @@ export default function Navbar() {
                     <Link 
                       to={link.href}
                       onClick={() => setIsOpen(false)}
-                      className={`text-3xl md:text-5xl font-serif text-white hover:text-hotel-primary transition-all duration-300 block ${
-                        location.pathname === link.href ? 'text-hotel-primary scale-110' : ''
+                      className={`text-3xl md:text-5xl font-serif text-white hover:text-whatsapp transition-all duration-300 block ${
+                        location.pathname === link.href ? 'text-whatsapp scale-110' : ''
                       }`}
                     >
                       {link.label}
@@ -142,7 +142,7 @@ export default function Navbar() {
                 <Link 
                   to="/booking"
                   onClick={() => setIsOpen(false)}
-                  className="bg-hotel-primary text-white w-full max-w-xs py-5 rounded-2xl text-xl uppercase tracking-widest font-bold shadow-2xl shadow-hotel-primary/40 text-center active:scale-95 transition-transform"
+                  className="bg-whatsapp text-white w-full max-w-xs py-5 rounded-2xl text-xl uppercase tracking-widest font-bold shadow-2xl shadow-whatsapp/40 text-center active:scale-95 transition-transform"
                 >
                   Book Your Stay
                 </Link>

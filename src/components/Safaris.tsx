@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { SAFARI_PACKAGES } from '../constants';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar, Clock, MapPin, ArrowUpRight } from 'lucide-react';
 
 export default function Safaris() {
   return (
@@ -9,10 +9,10 @@ export default function Safaris() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
           <div>
-            <span className="text-sm uppercase tracking-[0.3em] font-semibold text-hotel-primary mb-4 block">Wild Experiences</span>
+            <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-hotel-primary mb-4 block">Wild Experiences</span>
             <h2 className="text-4xl md:text-5xl font-serif">Safaris & Tours</h2>
           </div>
-          <p className="max-w-md text-white/60 text-sm leading-relaxed mb-1">
+          <p className="max-w-md text-white/50 text-[11px] uppercase tracking-[0.2em] leading-relaxed mb-1 font-bold">
             Explore the hidden gems of Homa Bay, from the rare wildlife of Ruma to the tranquil islands of the great lake. Our curated tours bring you closer to nature.
           </p>
         </div>
@@ -38,19 +38,22 @@ export default function Safaris() {
               {/* Content */}
               <div className="relative p-12 w-full transform translate-y-8 group-hover:translate-y-0 transition-all duration-700">
                 <div className="flex gap-4 mb-6">
-                  <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-hotel-primary bg-hotel-primary/10 px-4 py-2 rounded-full border border-hotel-primary/20 backdrop-blur-md">
-                    <Clock size={12} /> {pkg.duration}
-                  </span>
-                  <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-white/60 bg-white/5 px-4 py-2 rounded-full backdrop-blur-md">
-                    <MapPin size={12} /> Homa Bay
-                  </span>
+                   <div className="flex items-center gap-2 bg-hotel-primary/20 backdrop-blur-md px-4 py-2 rounded-xl border border-hotel-primary/30">
+                      <Clock size={12} className="text-hotel-primary" />
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-white">{pkg.duration}</span>
+                   </div>
+                   <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
+                      <MapPin size={12} className="text-white/40" />
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-white/40">Homa Bay</span>
+                   </div>
                 </div>
                 <h3 className="text-4xl md:text-5xl font-serif mb-6 group-hover:text-hotel-primary transition-colors leading-tight">{pkg.title}</h3>
                 <p className="text-white/50 mb-10 max-w-sm font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                   {pkg.description}
                 </p>
-                <Link to="/safaris" className="inline-flex items-center gap-6 text-[10px] uppercase tracking-[0.4em] font-black group-hover:gap-10 transition-all duration-500 text-white">
-                  Explore Safari <div className="w-16 h-px bg-hotel-primary brightness-150"></div>
+                <Link to="/safaris" className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] font-black group-hover:text-hotel-primary transition-all duration-500 text-white">
+                  Discover Expedition 
+                  <ArrowUpRight size={16} />
                 </Link>
               </div>
             </motion.div>

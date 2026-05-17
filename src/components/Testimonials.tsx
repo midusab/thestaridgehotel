@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Quote, Star, ArrowLeft, ArrowRight } from 'lucide-react';
 import { TESTIMONIALS } from '../constants';
 
 export default function Testimonials() {
@@ -107,7 +107,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: -20, scale: 0.95 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-10 md:p-16 shadow-2xl relative overflow-hidden"
+              className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden"
             >
               {/* Card Decoration */}
               <div className="absolute top-0 right-0 p-8 opacity-10">
@@ -156,9 +156,9 @@ export default function Testimonials() {
           <div className="flex justify-center md:justify-between items-center mt-12 gap-6">
             <button 
               onClick={handlePrev}
-              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-hotel-primary/30 transition-all duration-300 md:absolute md:-left-20 md:top-1/2 md:-translate-y-1/2"
+              className="w-14 h-14 rounded-2xl border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-hotel-primary/30 transition-all duration-300 md:absolute md:-left-20 md:top-1/2 md:-translate-y-1/2"
             >
-              <ChevronLeft size={24} />
+              <ArrowLeft size={20} />
             </button>
             
             <div className="flex gap-3">
@@ -177,9 +177,9 @@ export default function Testimonials() {
 
             <button 
               onClick={handleNext}
-              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-hotel-primary/30 transition-all duration-300 md:absolute md:-right-20 md:top-1/2 md:-translate-y-1/2"
+              className="w-14 h-14 rounded-2xl border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-hotel-primary/30 transition-all duration-300 md:absolute md:-right-20 md:top-1/2 md:-translate-y-1/2"
             >
-              <ChevronRight size={24} />
+              <ArrowRight size={20} />
             </button>
           </div>
         </div>

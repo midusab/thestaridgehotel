@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 export default function Gallery() {
   const images = [
@@ -52,7 +52,7 @@ export default function Gallery() {
           <p className="max-w-xs text-gray-400 text-[10px] uppercase tracking-widest font-bold">Slide to explore our world</p>
         </div>
 
-        <div className="relative group aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl shadow-2xl">
+        <div className="relative group aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-3xl shadow-2xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -101,15 +101,15 @@ export default function Gallery() {
           {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
-            className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-hotel-dark"
+            className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-hotel-dark"
           >
-            <ChevronLeft size={24} />
+            <ArrowLeft size={20} />
           </button>
           <button 
             onClick={nextSlide}
-            className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-hotel-dark"
+            className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-hotel-dark"
           >
-            <ChevronRight size={24} />
+            <ArrowRight size={20} />
           </button>
 
           {/* Dots */}

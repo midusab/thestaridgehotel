@@ -70,7 +70,7 @@ export default function Facilities() {
                 key={facility.title}
                 variants={cardVariants}
                 whileHover={{ y: -10 }}
-                className="group relative h-[450px] bg-hotel-dark rounded-3xl overflow-hidden shadow-2xl"
+                className="group relative h-[450px] bg-hotel-dark rounded-3xl overflow-hidden shadow-2xl shadow-hotel-dark/20"
               >
                 {/* Image Background */}
                 <img 

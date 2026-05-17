@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import Navbar from './Navbar';
 import { Footer } from './Contact';
 import BackToTop from './BackToTop';
+import WhatsAppButton from './WhatsAppButton';
+import CookieConsent from './CookieConsent';
 
 export default function Layout() {
   const location = useLocation();
@@ -34,6 +36,8 @@ export default function Layout() {
       </main>
       <Footer />
       <BackToTop />
+      <WhatsAppButton />
+      <CookieConsent />
     </div>
   );
 }

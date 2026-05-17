@@ -5,7 +5,7 @@ export default function Booking() {
   return (
     <section id="booking" className="py-12 md:py-24 relative overflow-hidden bg-hotel-cream/20">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-white/40">
+        <div className="flex flex-col lg:flex-row bg-white rounded-3xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-white/40">
           
           {/* Reservation Info - Dark Side */}
           <div className="lg:w-2/5 bg-hotel-dark text-white p-10 md:p-20 flex flex-col justify-between relative overflow-hidden">
