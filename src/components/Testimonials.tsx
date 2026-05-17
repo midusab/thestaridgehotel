@@ -51,11 +51,27 @@ export default function Testimonials() {
         />
       </div>
 
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none flex items-center justify-center">
-        <span className="text-[15rem] md:text-[30rem] font-serif font-bold text-white leading-none overflow-hidden select-none whitespace-nowrap">
-          STARIDGE
-        </span>
+      {/* Background Image Visual */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <img 
+            src="/src/assets/images/staridge_testimonial_bg_1779033984752.png" 
+            alt="Atmospheric Background" 
+            className="w-full h-full object-cover opacity-10"
+          />
+        </motion.div>
+        {/* Gradient Overlay for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-hotel-dark via-transparent to-hotel-dark opacity-80"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
