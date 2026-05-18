@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { SAFARI_PACKAGES } from '../constants';
 import { Calendar, Clock, MapPin, ArrowUpRight } from 'lucide-react';
 
 export default function Safaris() {
+  useEffect(() => {
+    // Background prefetch safari images to ensure instant visual mounting
+    SAFARI_PACKAGES.forEach((pkg) => {
+      const img = new Image();
+      img.src = pkg.image;
+    });
+  }, []);
   return (
     <section id="safaris" className="py-24 bg-hotel-dark text-white">
       <div className="max-w-7xl mx-auto px-6">

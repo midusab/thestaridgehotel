@@ -15,6 +15,13 @@ export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
+    // Dynamic preload for critical LCP hero image only on Home mount
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = HERO_IMAGES[0];
+    document.head.appendChild(link);
+
     // Preload remaining carousel images in the background to ensure instantaneous slide transitions
     HERO_IMAGES.slice(1).forEach((src) => {
       const img = new Image();
@@ -24,7 +31,14 @@ export default function Hero() {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 5000);
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      try {
+        document.head.removeChild(link);
+      } catch (err) {
+        // Fallback if link was already removed
+      }
+    };
   }, []);
 
   const containerVariants = {

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Calendar, Users, Home } from 'lucide-react';
+import { CONTACT_INFO } from '../constants';
 
 export default function Booking() {
   return (
@@ -43,7 +44,7 @@ export default function Booking() {
             <div className="mt-20 pt-10 border-t border-white/5 relative z-10">
               <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-medium mb-4">Direct Assistance</p>
               <div className="text-xl md:text-2xl font-serif text-hotel-primary">
-                +254 7XX XXX XXX
+                {CONTACT_INFO.phone}
               </div>
             </div>
           </div> 
@@ -104,7 +105,7 @@ export default function Booking() {
 
               <div className="pt-8">
                 <motion.button 
-                  whileHover={{ scale: 1.01, backgroundColor: 'var(--hotel-dark)' }}
+                  whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   className="w-full bg-hotel-primary text-white py-6 rounded-2xl uppercase tracking-[0.4em] font-bold text-xs shadow-2xl shadow-hotel-primary/30 transition-all duration-500 overflow-hidden relative group"
                 >
