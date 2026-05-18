@@ -67,6 +67,7 @@ export default function Testimonials() {
           <img 
             src="/src/assets/images/staridge_testimonial_bg_1779033984752.png" 
             alt="Atmospheric Background" 
+            loading="lazy"
             className="w-full h-full object-cover opacity-10"
           />
         </motion.div>
@@ -120,6 +121,7 @@ export default function Testimonials() {
                     <img 
                       src={TESTIMONIALS[currentIndex].avatar} 
                       alt={TESTIMONIALS[currentIndex].name}
+                      loading="lazy"
                       className="w-full h-full object-cover rounded-2xl"
                     />
                   </div>

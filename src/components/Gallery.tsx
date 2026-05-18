@@ -37,6 +37,12 @@ export default function Gallery() {
   };
 
   useEffect(() => {
+    // Preload remaining gallery images in the background to ensure instantaneous slide transitions
+    images.slice(1).forEach((imgObj) => {
+      const img = new Image();
+      img.src = imgObj.url;
+    });
+
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -66,6 +72,7 @@ export default function Gallery() {
                 src={images[currentIndex].url} 
                 className="w-full h-full object-cover" 
                 alt={images[currentIndex].title} 
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-hotel-dark/80 via-transparent to-transparent"></div>
               

@@ -46,6 +46,7 @@ export default function GalleryPage() {
               <img 
                 src={image.url} 
                 alt={image.title}
+                loading={i > 2 ? "lazy" : "eager"}
                 className="w-full h-auto object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-hotel-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">

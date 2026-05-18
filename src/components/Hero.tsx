@@ -15,6 +15,12 @@ export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
+    // Preload remaining carousel images in the background to ensure instantaneous slide transitions
+    HERO_IMAGES.slice(1).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 5000);

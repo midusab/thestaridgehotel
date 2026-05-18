@@ -140,6 +140,7 @@ export default function Menu() {
               <img 
                  src="/src/assets/images/starney_dessert_1779032713240.png" 
                  alt="Staridge Desserts" 
+                 loading="lazy"
                  className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000"
               />
               <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
@@ -157,6 +158,7 @@ export default function Menu() {
               <img 
                  src="/src/assets/images/starney_cocktail_1779032730867.png" 
                  alt="Staridge Cocktails" 
+                 loading="lazy"
                  className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000"
               />
               <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">

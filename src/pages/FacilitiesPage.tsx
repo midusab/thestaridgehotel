@@ -95,7 +95,7 @@ export default function FacilitiesPage() {
             viewport={{ once: true }}
             className="aspect-[4/3] bg-hotel-dark rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2"
           >
-            <img src="/src/assets/images/staridge_room_suite_1779019200923.png" alt="Executive Room" className="w-full h-full object-cover" />
+            <img src="/src/assets/images/staridge_room_suite_1779019200923.png" alt="Executive Room" loading="lazy" className="w-full h-full object-cover" />
           </motion.div>
         </section>
 
@@ -107,7 +107,7 @@ export default function FacilitiesPage() {
             viewport={{ once: true }}
             className="aspect-[4/3] bg-hotel-dark rounded-2xl overflow-hidden shadow-2xl"
           >
-            <img src="/src/assets/images/staridge_deluxe_room_1779032129702.png" alt="Deluxe Room" className="w-full h-full object-cover" />
+            <img src="/src/assets/images/staridge_deluxe_room_1779032129702.png" alt="Deluxe Room" loading="lazy" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -168,7 +168,7 @@ export default function FacilitiesPage() {
             viewport={{ once: true }}
             className="aspect-[4/3] bg-hotel-dark rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2"
           >
-            <img src="/src/assets/images/staridge_conference_room_1779032098064.png" alt="Conference Room" className="w-full h-full object-cover" />
+            <img src="/src/assets/images/staridge_conference_room_1779032098064.png" alt="Conference Room" loading="lazy" className="w-full h-full object-cover" />
           </motion.div>
         </section>
 
@@ -180,7 +180,7 @@ export default function FacilitiesPage() {
             viewport={{ once: true }}
             className="aspect-[4/3] bg-hotel-dark rounded-2xl overflow-hidden shadow-2xl"
           >
-            <img src="/src/assets/images/staridge_bar_lounge_1779032114547.png" alt="Bar and Lounge" className="w-full h-full object-cover" />
+            <img src="/src/assets/images/staridge_bar_lounge_1779032114547.png" alt="Bar and Lounge" loading="lazy" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -226,7 +226,7 @@ export default function FacilitiesPage() {
             viewport={{ once: true }}
             className="aspect-[4/3] bg-hotel-dark rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2"
           >
-            <img src="/src/assets/images/lake_victoria_fish_dish_1779019237096.png" alt="Restaurant" className="w-full h-full object-cover" />
+            <img src="/src/assets/images/lake_victoria_fish_dish_1779019237096.png" alt="Restaurant" loading="lazy" className="w-full h-full object-cover" />
           </motion.div>
         </section>
 
@@ -238,7 +238,7 @@ export default function FacilitiesPage() {
             viewport={{ once: true }}
             className="aspect-[4/3] bg-hotel-dark rounded-2xl overflow-hidden shadow-2xl"
           >
-            <img src="/src/assets/images/lake_simbi_boat_ride_1779032145529.png" alt="Tours and Travel" className="w-full h-full object-cover" />
+            <img src="/src/assets/images/lake_simbi_boat_ride_1779032145529.png" alt="Tours and Travel" loading="lazy" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 30 }}

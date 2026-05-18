@@ -76,6 +76,7 @@ export default function Facilities() {
                 <img 
                   src={facility.image} 
                   alt={facility.title} 
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000"
                 />
                 

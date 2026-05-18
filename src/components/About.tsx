@@ -36,6 +36,7 @@ export default function About() {
             <img 
               src="/src/assets/images/staridge_room_suite_1779019200923.png" 
               alt="Luxury at Staridge" 
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
             />
           </div>

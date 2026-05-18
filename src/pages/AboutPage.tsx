@@ -84,6 +84,7 @@ export default function AboutPage() {
               <img 
                 src="/src/assets/images/lake_simbi_boat_ride_1779032145529.png" 
                 alt="Lake Victoria Culture" 
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-hotel-dark/20"></div>
@@ -166,18 +167,18 @@ export default function AboutPage() {
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
                <div className="space-y-4">
                  <div className="aspect-[4/5] bg-white/5 rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="/src/assets/images/staridge_room_suite_1779019200923.png" className="w-full h-full object-cover opacity-60" />
+                    <img src="/src/assets/images/staridge_room_suite_1779019200923.png" loading="lazy" className="w-full h-full object-cover opacity-60" />
                  </div>
                  <div className="aspect-square bg-white/5 rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="/src/assets/images/lake_victoria_fish_dish_1779019237096.png" className="w-full h-full object-cover opacity-60" />
+                    <img src="/src/assets/images/lake_victoria_fish_dish_1779019237096.png" loading="lazy" className="w-full h-full object-cover opacity-60" />
                  </div>
                </div>
                <div className="space-y-4 pt-12">
                  <div className="aspect-square bg-white/5 rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="/src/assets/images/staridge_conference_room_1779032098064.png" className="w-full h-full object-cover opacity-60" />
+                    <img src="/src/assets/images/staridge_conference_room_1779032098064.png" loading="lazy" className="w-full h-full object-cover opacity-60" />
                  </div>
                  <div className="aspect-[4/5] bg-white/5 rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="/src/assets/images/staridge_infinity_pool_1779033032109.png" className="w-full h-full object-cover opacity-60" />
+                    <img src="/src/assets/images/staridge_infinity_pool_1779033032109.png" loading="lazy" className="w-full h-full object-cover opacity-60" />
                  </div>
                </div>
             </div>
