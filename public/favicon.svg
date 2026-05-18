@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Rounded Background (Squircle shape for modern mobile/desktop apps) -->
+  <rect width="512" height="512" rx="128" fill="#0a0f18"/>
+  
+  <!-- Outer Gold Frame Rings -->
+  <circle cx="256" cy="256" r="215" fill="none" stroke="#b69a65" stroke-width="4" stroke-dasharray="12 6" opacity="0.3"/>
+  <circle cx="256" cy="256" r="195" fill="none" stroke="#b69a65" stroke-width="6"/>
+  
+  <!-- Crown Icon at the top of the crest -->
+  <path d="M190 200 L215 250 L256 180 L297 250 L322 200 L340 280 L172 280 Z" fill="#b69a65"/>
+  <circle cx="190" cy="195" r="7" fill="#b69a65"/>
+  <circle cx="256" cy="173" r="9" fill="#b69a65"/>
+  <circle cx="322" cy="195" r="7" fill="#b69a65"/>
+  
+  <!-- Center Staridge Serif Letter "S" -->
+  <text x="256" y="385" font-family="'Cormorant Garamond', 'Georgia', serif" font-size="160" font-weight="bold" fill="#ffffff" text-anchor="middle">S</text>
+  
+  <!-- Golden Sparkle Accent -->
+  <path d="M330 290 Q345 290 345 275 Q345 290 360 290 Q345 290 345 305 Q345 290 330 290 Z" fill="#b69a65"/>
+</svg>
